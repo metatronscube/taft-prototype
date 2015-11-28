@@ -14,7 +14,8 @@ class CreateItemsTable extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('hex');
+            $table->integer('user_id')->index();
+            $table->string('hex')->index();
             $table->string('name');
             $table->string('description');
             $table->timestamps();

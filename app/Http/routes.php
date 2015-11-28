@@ -1,6 +1,5 @@
 <?php
 
-use App\Item;
 use Illuminate\Http\Request;
 
 /*
@@ -18,35 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/items', function () {
-    $items = Item::orderBy('created_at', 'asc')->get();
+// Authentication Routes...
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
-    return view('items', [
-        'items' => $items
-    ]);
-});
+// Registration Routes...
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
 
-Route::post('/item', function (Request $request) {
-    $validator = Validator::make($request->all(), [
-        'name' => 'required|max:255',
-    ]);
-
-    if ($validator->fails()) {
-        return redirect('/items')
-            ->withInput()
-            ->withErrors($validator);
-    }
-
-    $item = new Item;
-    $item->name = $request->name;
-    // add call to hex generator here
-    $item->save();
-
-    return redirect('/items');
-});
-
-Route::delete('/item/{id}', function ($id) {
-    Item::findOrFail($id)->delete();
-
-    return redirect('/items');
-});
+// Item list/create/destroy Routes...
+Route::get('/items', 'ItemController@index');
+Route::post('/item', 'ItemController@store');
+Route::delete('/item/{item}', 'ItemController@destroy');

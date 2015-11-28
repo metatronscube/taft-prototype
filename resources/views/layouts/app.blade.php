@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Laravel Quickstart - Basic</title>
+    <title>Laravel Quickstart - Intermediate</title>
 
     <!-- CSS And JavaScript -->
     <!-- Latest compiled and minified CSS -->
@@ -17,7 +17,7 @@
 <body>
 <div class="container">
     <nav class="navbar navbar-default">
-        <!-- Navbar Contents -->
+        <!-- Navbar Contents --><a href="/auth/logout">Logout</a>
     </nav>
 </div>
 

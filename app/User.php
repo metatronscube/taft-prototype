@@ -36,4 +36,12 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    /**
+     * Get all of the items created by user.
+     */
+    public function items()
+    {
+        return $this->hasMany(Item::class);
+    }
 }
