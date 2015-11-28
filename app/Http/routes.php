@@ -30,3 +30,7 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::get('/items', 'ItemController@index');
 Route::post('/item', 'ItemController@store');
 Route::delete('/item/{item}', 'ItemController@destroy');
+
+Route::get('/helper-test', function() {
+    return getRandomHex(16);
+});
