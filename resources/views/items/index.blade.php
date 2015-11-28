@@ -13,11 +13,17 @@
         {{ csrf_field() }}
 
                 <!-- Item Name -->
-        <div class="form-group">
-            <label for="item" class="col-sm-3 control-label">Item</label>
-
+        <div class="form-group row">
+            <label for="item" class="col-sm-3 control-label">Item name</label>
             <div class="col-sm-6">
                 <input type="text" name="name" id="item-name" class="form-control">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="item-description" class="col-sm-3 control-label">Description</label>
+            <div class="col-sm-6">
+                <input type="text" name="description" id="item-description" class="form-control">
             </div>
         </div>
 
@@ -45,6 +51,7 @@
                 <!-- Table Headings -->
                 <thead>
                 <th>Item</th>
+                <th>Description</th>
                 <th>Created by</th>
                 </thead>
 
@@ -55,6 +62,10 @@
                         <!-- Item Name -->
                         <td class="table-text">
                             <div>{{ $item->name }}</div>
+                        </td>
+                        <!-- Item Description -->
+                        <td class="table-text">
+                            <div>{{ $item->description }}</div>
                         </td>
                         <!-- User Name -->
                         <td class="table-text">

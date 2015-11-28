@@ -63,6 +63,7 @@ class ItemController extends Controller
 
         $request->user()->items()->create([
             'name' => $request->name,
+            'description' => $request->description,
         ]);
 
         return redirect('/items');
