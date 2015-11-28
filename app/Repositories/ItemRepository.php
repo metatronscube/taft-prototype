@@ -18,4 +18,10 @@ class ItemRepository
             ->orderBy('created_at', 'asc')
             ->get();
     }
+
+    public function forAdmin()
+    {
+        return Item::all();
+        //->orderBy('created_at', 'asc')
+    }
 }

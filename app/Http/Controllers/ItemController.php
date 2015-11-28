@@ -38,9 +38,15 @@ class ItemController extends Controller
      */
     public function index(Request $request)
     {
-       return view('items.index', [
-            'items' => $this->items->forUser($request->user()),
-        ]);
+        if ($request->user()->id === 1) {
+            return view('items.index', [
+                'items' => $this->items->forAdmin(),
+            ]);
+        } else {
+            return view('items.index', [
+                'items' => $this->items->forUser($request->user()),
+            ]);
+        }
     }
 
     /**

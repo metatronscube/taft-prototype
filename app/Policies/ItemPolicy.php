@@ -29,6 +29,10 @@ class ItemPolicy
      */
     public function destroy(User $user, Item $item)
     {
-        return $user->id === $item->user_id;
+        if ($user->id === 1) {
+            return true;
+        } else {
+            return $user->id === $item->user_id;
+        }
     }
 }
