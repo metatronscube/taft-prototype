@@ -45,7 +45,7 @@
                 <!-- Table Headings -->
                 <thead>
                 <th>Item</th>
-                <th>&nbsp;</th>
+                <th>Created by</th>
                 </thead>
 
                 <!-- Table Body -->
@@ -55,6 +55,10 @@
                         <!-- Item Name -->
                         <td class="table-text">
                             <div>{{ $item->name }}</div>
+                        </td>
+                        <!-- User Name -->
+                        <td class="table-text">
+                            <div>{{ $item->user->name }}</div>
                         </td>
 
                         <!-- Delete Button -->
