@@ -38,14 +38,28 @@ class ItemController extends Controller
      */
     public function index(Request $request)
     {
+        return view ('items.index', [
+            'items' => $this->getItemsForUser($request)
+        ]);
+    }
+
+    /**
+     * JSON feed of items, using for Angular setup
+     */
+    public function feed(Request $request)
+    {
+        return $this->getItemsForUser($request);
+    }
+
+    /**
+     * Gets all items if user id is 1, otherwise gets authorized user's items
+     */
+    private function getItemsForUser(Request $request)
+    {
         if ($request->user()->id === 1) {
-            return view('items.index', [
-                'items' => $this->items->forAdmin(),
-            ]);
+            return $this->items->forAdmin();
         } else {
-            return view('items.index', [
-                'items' => $this->items->forUser($request->user()),
-            ]);
+            return $this->items->forUser($request->user());
         }
     }
 
