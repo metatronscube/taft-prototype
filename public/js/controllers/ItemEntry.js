@@ -1,15 +1,10 @@
-/* js/controllers/ItemEntry.js */
-
 (function() {
-
     'use strict';
-
     angular
         .module('itemContainer')
         .controller('ItemEntry', ItemEntry);
 
     function ItemEntry(item) {
-
         // vm is our capture variable
         var vm = this;
 
@@ -23,7 +18,5 @@
         }, function(error) { // Check for errors
             console.log(error);
         });
-
-
     }
 })();

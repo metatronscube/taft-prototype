@@ -1,15 +1,10 @@
-/* js/services/item.js */
-
 (function() {
-
     'use strict';
-
     angular
         .module('itemContainer')
         .factory('item', item);
 
     function item($resource) {
-
         // ngResource call to our static data
         var Item = $resource('items/feed');
 

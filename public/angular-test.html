@@ -17,7 +17,21 @@
 </nav>
 
 <div class="container">
-
+    <div class="col-sm-8">
+        <div class="well timeentry" ng-repeat="item in vm.itementries">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h4><i class="glyphicon glyphicon-user"></i>
+                        {{item.name}} - user # {{item.user_id}}</h4>
+                    <p><i class="glyphicon glyphicon-pencil"></i> {{item.description}}</p>
+                </div>
+                <div class="col-sm-4 time-numbers">
+                    <h4><i class="glyphicon glyphicon-calendar"></i>
+                        {{time.created_at | date:'mediumDate'}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 
