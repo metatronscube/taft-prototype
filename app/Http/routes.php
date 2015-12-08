@@ -32,6 +32,12 @@ Route::post('/item', 'ItemController@store');
 Route::delete('/item/{item}', 'ItemController@destroy');
 Route::get('/items/feed', 'ItemController@feed');
 
+// Item list/create/destroy Routes...
+Route::get('/zones', 'ZoneController@index');
+Route::post('/zone', 'ZoneController@store');
+Route::delete('/zone/{zone}', 'ZoneController@destroy');
+Route::get('/zones/feed', 'ZoneController@feed');
+
 Route::get('/helper-test', function() {
     return getRandomHex(16);
 });

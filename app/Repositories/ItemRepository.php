@@ -1,27 +1,12 @@
 <?php
 namespace App\Repositories;
 
-use App\User;
 use App\Item;
 
-class ItemRepository
+class ItemRepository extends Repository
 {
-    /**
-     * Get all of the tasks for a given user.
-     *
-     * @param  User  $user
-     * @return Collection
-     */
-    public function forUser(User $user)
+    public function __construct(Item $model)
     {
-        return Item::where('user_id', $user->id)
-            ->orderBy('created_at', 'asc')
-            ->get();
-    }
-
-    public function forAdmin()
-    {
-        return Item::all();
-        //->orderBy('created_at', 'asc')
+        parent::__construct($model);
     }
 }

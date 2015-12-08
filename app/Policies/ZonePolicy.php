@@ -3,14 +3,14 @@
 namespace App\Policies;
 
 use App\User;
-use App\Item;
+use App\Zone;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class ItemPolicy extends Policy
+class ZonePolicy extends Policy
 {
     use HandlesAuthorization;
 
-    public function __construct(Item $model)
+    public function __construct(Zone $model)
     {
         parent::__construct($model);
     }

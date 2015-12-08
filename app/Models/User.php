@@ -44,4 +44,12 @@ class User extends Model implements AuthenticatableContract,
     {
         return $this->hasMany(Item::class);
     }
+
+    /**
+     * Get all of the zones created by user.
+     */
+    public function zones()
+    {
+        return $this->hasMany(Zone::class);
+    }
 }
