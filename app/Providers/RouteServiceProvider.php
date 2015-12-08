@@ -26,6 +26,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         $router->model('item', 'App\Item');
         $router->model('zone', 'App\Zone');
+        $router->model('variable', 'App\Variable');
 
         parent::boot($router);
     }

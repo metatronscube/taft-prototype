@@ -38,6 +38,12 @@ Route::post('/zone', 'ZoneController@store');
 Route::delete('/zone/{zone}', 'ZoneController@destroy');
 Route::get('/zones/feed', 'ZoneController@feed');
 
+// Item list/create/destroy Routes...
+Route::get('/variables', 'VariableController@index');
+Route::post('/variable', 'VariableController@store');
+Route::delete('/variable/{variable}', 'VariableController@destroy');
+Route::get('/variables/feed', 'VariableController@feed');
+
 Route::get('/helper-test', function() {
     return getRandomHex(16);
 });

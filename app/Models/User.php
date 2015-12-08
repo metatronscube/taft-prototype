@@ -38,6 +38,14 @@ class User extends Model implements AuthenticatableContract,
     protected $hidden = ['password', 'remember_token'];
 
     /**
+     * Get all of the zones created by user.
+     */
+    public function zones()
+    {
+        return $this->hasMany(Zone::class);
+    }
+
+    /**
      * Get all of the items created by user.
      */
     public function items()
@@ -46,10 +54,10 @@ class User extends Model implements AuthenticatableContract,
     }
 
     /**
-     * Get all of the zones created by user.
+     * Get all of the variables created by user.
      */
-    public function zones()
+    public function variables()
     {
-        return $this->hasMany(Zone::class);
+        return $this->hasMany(Variable::class);
     }
 }
