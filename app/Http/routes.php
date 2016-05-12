@@ -32,6 +32,12 @@ Route::post('/item', 'ItemController@store');
 Route::delete('/item/{item}', 'ItemController@destroy');
 Route::get('/items/feed', 'ItemController@feed');
 
+// Action list/create/destroy Routes...
+Route::get('/actions', 'ActionController@index');
+Route::post('/action', 'ActionController@store');
+Route::delete('/action/{action}', 'ActionController@destroy');
+Route::get('/actions/feed', 'ActionController@feed');
+
 // Item list/create/destroy Routes...
 Route::get('/zones', 'ZoneController@index');
 Route::post('/zone', 'ZoneController@store');

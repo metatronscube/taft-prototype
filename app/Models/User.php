@@ -60,4 +60,12 @@ class User extends Model implements AuthenticatableContract,
     {
         return $this->hasMany(Variable::class);
     }
+
+    /**
+     * Get all of the actions created by user.
+     */
+    public function actions()
+    {
+        return $this->hasMany(Action::class);
+    }
 }

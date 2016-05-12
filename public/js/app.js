@@ -1,8 +1,9 @@
 (function() {
     'use strict';
     angular
-        .module('itemContainer', [
+        .module('myApp', [
             'ngResource',
             'ui.bootstrap'
         ]);
+
 })();

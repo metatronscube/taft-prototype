@@ -6,28 +6,39 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
 </head>
-<body ng-app="itemContainer" ng-controller="ItemEntry as vm">
+<body ng-app="myApp">
 
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Item Container</a>
+            <a class="navbar-brand" href="#">Item/Action Testbed</a>
         </div>
     </div>
 </nav>
 
 <div class="container">
-    <div class="col-sm-8">
+    <div class="col-sm-4" ng-controller="ItemEntry as vm">
+        <h1>Items</h1>
         <div class="well timeentry" ng-repeat="item in vm.itementries">
             <div class="row">
-                <div class="col-sm-8">
-                    <h4><i class="glyphicon glyphicon-user"></i>
-                        {{item.name}} - user # {{item.user_id}}</h4>
+                <div class="col-sm-10">
+                    <h4>{{item.name}} - <i class="glyphicon glyphicon-user"></i>#{{item.user_id}}</h4>
                     <p><i class="glyphicon glyphicon-pencil"></i> {{item.description}}</p>
                 </div>
-                <div class="col-sm-4 time-numbers">
-                    <h4><i class="glyphicon glyphicon-calendar"></i>
-                        {{time.created_at | date:'mediumDate'}}</h4>
+                <div class="col-sm-2">
+                    <i class="glyphicon glyphicon-trash"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4" ng-controller="ActionEntry as xm">
+        <h1>Actions</h1>
+        <div class="well timeentry" ng-repeat="action in xm.actionentries">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h4><i class="glyphicon glyphicon-trash"></i>
+                        {{action.name}} - <i class="glyphicon glyphicon-user"></i>#{{action.user_id}}</h4>
+                    <p><i class="glyphicon glyphicon-pencil"></i> {{action.description}}</p>
                 </div>
             </div>
         </div>
@@ -46,4 +57,6 @@
 <script type="text/javascript" src="js/app.js"></script>
 <script type="text/javascript" src="js/controllers/ItemEntry.js"></script>
 <script type="text/javascript" src="js/services/item.js"></script>
+<script type="text/javascript" src="js/controllers/ActionEntry.js"></script>
+<script type="text/javascript" src="js/services/action.js"></script>
 </html>

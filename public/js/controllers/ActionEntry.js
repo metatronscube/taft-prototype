@@ -2,19 +2,19 @@
     'use strict';
     angular
         .module('myApp')
-        .controller('ItemEntry', ItemEntry);
+        .controller('ActionEntry', ActionEntry);
 
-    function ItemEntry(item) {
+    function ActionEntry(action) {
         // vm is our capture variable
         var vm = this;
 
-        vm.itementries = [];
+        vm.actionentries = [];
 
         // Fetches the time entries from the static JSON file
         // and puts the results on the vm.timeentries array
-        item.getItem().then(function(results) {
-            vm.itementries = results;
-            console.log(vm.itementries);
+        action.getAction().then(function(results) {
+            vm.actionentries = results;
+            console.log(vm.actionentries);
         }, function(error) { // Check for errors
             console.log(error);
         });

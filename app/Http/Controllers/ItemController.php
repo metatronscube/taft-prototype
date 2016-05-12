@@ -96,6 +96,19 @@ class ItemController extends Controller
 
         $item->delete();
 
-        return redirect('/items');
+        return $item;
+    }
+
+    public function update(Request $request, $id)
+    {
+        $item = Item::find($id);
+
+        $data = $request->all();
+
+        $item->fill($data);
+
+        $item->save();
+
+        return $item;
     }
 }

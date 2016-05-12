@@ -17,6 +17,7 @@ class AuthServiceProvider extends ServiceProvider
         \App\Item::class => \App\Policies\ItemPolicy::class,
         \App\Zone::class => \App\Policies\ZonePolicy::class,
         \App\Variable::class => \App\Policies\VariablePolicy::class,
+        \App\Action::class => \App\Policies\ActionPolicy::class,
     ];
 
     /**
